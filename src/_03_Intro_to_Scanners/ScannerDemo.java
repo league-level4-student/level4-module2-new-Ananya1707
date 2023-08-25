@@ -24,6 +24,8 @@ public class ScannerDemo {
          * Eclipse's console. This may change depending on the environment where
          * are running your program or the input/output stream you are using.
          */
+    	
+    	Scanner s = new Scanner(System.in);
 
         
         
@@ -41,6 +43,9 @@ public class ScannerDemo {
          * Note: Don't forget to save the results of next() or nextLine() into a
          * String variable.
          */
+    	
+    	System.out.println("Enter your name: ");
+    	String usersName = s.nextLine();
 
         
         
@@ -51,6 +56,10 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
+    	
+    	System.out.println("Enter your age: ");
+    	int usersAge = s.nextInt();
+    	
 
         
         
@@ -61,8 +70,16 @@ public class ScannerDemo {
          * Note: There are many methods similar to the one you used for int that
          * are capable of taking in primitive data types.
          */
+    	
+    	System.out.println("What is 3/2 as a decimal: ");
+    	double answer = s.nextDouble();
+    	
 
         // 5.) Print the user's data to the console nicely formatted.
+    	
+    	System.out.println("Your name is " + usersName);
+    	System.out.println("Your age is " + usersAge);
+    	System.out.println("You answered " + answer);
 
         
         
@@ -72,6 +89,8 @@ public class ScannerDemo {
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
+    	
+    	s.close();
 
     }
 

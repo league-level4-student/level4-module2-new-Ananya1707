@@ -47,9 +47,9 @@ public class GoShopping {
 		clothingCart.add(new Clothing());
 		clothingCart.add(new Clothing());
 		
-		toyCart.add(new Cereal());
-		toyCart.add(new Cereal());
-		toyCart.add(new Cereal());
+		toyCart.add(new Toy());
+		toyCart.add(new Toy());
+		toyCart.add(new Toy());
 				
 				
 		clothingCart.showCart();

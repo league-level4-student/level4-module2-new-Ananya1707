@@ -6,7 +6,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public abstract class NonFood {
+import _06_Console_Store.ConsoleStore;
+import _06_Console_Store.Item;
+
+public abstract class NonFood extends Item{
 	String item;
 	
 	public abstract JLabel getNonFood();
