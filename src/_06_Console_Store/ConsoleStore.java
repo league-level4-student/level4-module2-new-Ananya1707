@@ -2,6 +2,8 @@ package _06_Console_Store;
 
 import java.util.Scanner;
 
+import _02_Generics_Store.Cart;
+
 public class ConsoleStore {
 
     /*
@@ -39,17 +41,38 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-    	
+    	int money = 50;
     	Scanner s = new Scanner(System.in);
+    	boolean checkOut = true;
+    	Cart <Object> cart  = new Cart<Object>();
     	
-    	System.out.println("you have $" + money + "to spend");
-    	System.out.println("which item would you like to add to cart");
-    	s.nextLine();
+    	
+    	 do {
+    		 System.out.println("you have $" + money + " to spend");
+    		 System.out.println("would you like to add an item, remove an item, view your cart or check out? (add/delete/show/check out)");
+    		 String userInput = s.nextLine();
+    		 if(userInput.equals("add")) {
+        		 System.out.println("which item would you like to add to cart");
+        		 userInput = s.nextLine();
+        		 cart.add(userInput);
+
+    		 }
+    		 
+    		 checkOut = userInput.equals("Check Out")? false : true;
+    		 
+    		 
+         } while (checkOut);
+    	 
+    	 ConsoleStore c = new ConsoleStore();
+    	 c.checkOut();
+
+    	
     	
 
     }
     
-    void checkOut() {
+     void checkOut() {
+    	 
     	
     }
 

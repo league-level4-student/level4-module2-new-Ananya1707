@@ -7,9 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import _06_Console_Store.ConsoleStore;
-import _06_Console_Store.Item;
 
-public abstract class NonFood extends Item{
+public abstract class NonFood{
 	String item;
 	
 	public abstract JLabel getNonFood();

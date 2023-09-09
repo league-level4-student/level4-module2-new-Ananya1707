@@ -7,11 +7,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import _06_Console_Store.Item;
 
-
-
-public abstract class Food extends Item {
+public abstract class Food{
     String item;
 
     public abstract JLabel getFood();
