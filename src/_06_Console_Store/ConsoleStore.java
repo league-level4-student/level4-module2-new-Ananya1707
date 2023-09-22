@@ -2,7 +2,11 @@ package _06_Console_Store;
 
 import java.util.Scanner;
 
+import _02_Generics_Store.Candy;
 import _02_Generics_Store.Cart;
+import _02_Generics_Store.Cereal;
+import _02_Generics_Store.Clothing;
+import _02_Generics_Store.Toy;
 
 public class ConsoleStore {
 
@@ -44,19 +48,22 @@ public class ConsoleStore {
     	int money = 50;
     	Scanner s = new Scanner(System.in);
     	boolean checkOut = true;
-    	Cart <Object> cart  = new Cart<Object>();
+    	Cart <Item> cart  = new Cart<Item>();
     	
     	
     	 do {
     		 System.out.println("you have $" + money + " to spend");
-    		 System.out.println("would you like to add an item, remove an item, view your cart or check out? (add/delete/show/check out)");
+    		 System.out.println("would you like to add an item, remove an item, view your cart or check out? (add/delete/view/check out)");
     		 String userInput = s.nextLine();
     		 if(userInput.equals("add")) {
         		 System.out.println("which item would you like to add to cart");
         		 userInput = s.nextLine();
-        		 cart.add(userInput);
+        		 cart.add(getObject(userInput));
 
+    		 }else if(userInput.equals("view")) {
+    			 cart.showCart();
     		 }
+    		 
     		 
     		 checkOut = userInput.equals("Check Out")? false : true;
     		 
@@ -69,6 +76,24 @@ public class ConsoleStore {
     	
     	
 
+    }
+    
+     static Item getObject(String s) {
+    	if(s.equalsIgnoreCase("candy")) {
+    		return new Candy();
+    	}else if(s.equalsIgnoreCase("cereal")){
+    		return new Cereal();
+    		
+    	}else if(s.equalsIgnoreCase("clothing")){
+    		return new Clothing();
+    		
+    	}else if(s.equalsIgnoreCase("toy")){
+    		return new Toy();
+    		
+    	}else {
+    		return null;
+    	}
+    	
     }
     
      void checkOut() {

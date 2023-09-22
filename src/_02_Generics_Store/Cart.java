@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import _06_Console_Store.Item;
+
 /*
  * The Cart class is a Bounded Type Generic class
  * 
@@ -11,16 +13,17 @@ import javax.swing.JPanel;
  * Food class
  */
 
-public class Cart<T extends Object> {
+public class Cart<T extends Item> {
     private T[] cart;
 
 	@SuppressWarnings("unchecked")
 	public Cart() {
-        cart = (T[]) new Cart[5];
+        cart = (T[]) new Item[5];
     }
 
     // Adds an item to the cart
     public void add(T item) {
+    	System.out.println(item);
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] == null) {
                 cart[i] = item;
@@ -41,7 +44,7 @@ public class Cart<T extends Object> {
 
         for (int i = 0; i < cart.length; i++) {
             if (cart[i] != null) {
-                panel.add(((NonFood)cart[i]).getNonFood());
+                panel.add(((Item)cart[i]).getNonFood());
             }
         }
         frame.pack();

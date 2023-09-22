@@ -1,4 +1,4 @@
-package _02_Generics_Store;
+package _06_Console_Store;
 
 import java.io.IOException;
 
@@ -6,14 +6,15 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import _06_Console_Store.ConsoleStore;
-import _06_Console_Store.Item;
+import _02_Generics_Store.Cart;
 
-public abstract class NonFood extends Item{
+public abstract class Item {
 	String item;
 	
-	public abstract JLabel getNonFood();
-		
+	public JLabel getItem(String item) {
+		return new JLabel(loadImage(item));
+	}
+	
 	@SuppressWarnings("rawtypes")
 	public static ImageIcon loadImage(String fileName) {
 		try {
@@ -23,4 +24,5 @@ public abstract class NonFood extends Item{
 			return null;
 		}
 	}
+
 }
